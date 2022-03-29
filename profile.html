@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/profile/main.css" />
+    <title>Profile</title>
+  </head>
+  <body style="background-color: #fff">
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img style="transform: scale(1.2)" src="./img/dashboard.png" alt="" />
+        </div>
+
+        <span class="logo_name">Profile</span>
+      </div>
+
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <!-- <img src="./img/profile.png" alt="" /> -->
+            <a href="#dash">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-files-landscapes"></i>
+              <span class="link-name">About You</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#">
+              <i class="uil uil-chart"></i>
+              <span class="link-name">Analytics</span>
+            </a>
+          </li> -->
+          <!-- <li>
+            <a href="./download.html">
+              <i class="uil uil-thumbs-up"></i>
+              <span class="link-name">Download Page</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="./upload.html">
+              <i class="uil uil-comments"></i>
+              <span class="link-name">Upload Page</span>
+            </a>
+          </li>
+          <li>
+            <a href="./index.html">
+              <i class="uil uil-share"></i>
+              <span class="link-name">Front Page</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="logout-mode">
+          <li>
+            <a href="#">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+
+          <!-- <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <section class="dashboard" id="dash">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <div class="search-box">
+          <i class="uil uil-search"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+
+        <!--<img src="images/profile.jpg" alt="">-->
+      </div>
+
+      <div class="dash-content">
+        <div class="overview">
+          <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Dashboard</span>
+          </div>
+
+          <div class="boxes">
+            <div class="box box1">
+              <i class="uil uil-thumbs-up"></i>
+              <span class="text">Total Uploads</span>
+              <span class="number">100</span>
+            </div>
+            <div class="box box2">
+              <i class="uil uil-comments"></i>
+              <span class="text">Total downloads</span>
+              <span class="number">100</span>
+            </div>
+            <div class="box box3">
+              <i class="uil uil-share"></i>
+              <span class="text">Refrals</span>
+              <span class="number">100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="ab_you">
+      <div class="about_span">
+        <div class="about_spandiv name">
+          <span>Name</span>
+          <span>Shreyas M. Waykar</span>
+        </div>
+        <div class="about_spandiv institution">
+          <span> Institution </span>
+          <span>National Institute of Technology Surathkal</span>
+        </div>
+        <div class="about_spandiv mail">
+          <span>Mail ID</span> <span>shreyas.waykar123@gmail.com</span>
+        </div>
+        <div class="about_spandiv linkedin">
+          <span>Phone Number</span><span>+91 9874545465</span>
+        </div>
+      </div>
+      <div class="about_graph">
+        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+      </div>
+    </section>
+    <script src="/profile_script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+      var xyValues = [
+        { x: 50, y: 7 },
+        { x: 60, y: 8 },
+        { x: 70, y: 8 },
+        { x: 80, y: 9 },
+        { x: 90, y: 9 },
+        { x: 100, y: 9 },
+        { x: 110, y: 10 },
+        { x: 120, y: 11 },
+        { x: 130, y: 14 },
+        { x: 140, y: 14 },
+        { x: 150, y: 15 },
+      ];
+
+      new Chart("myChart", {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              pointRadius: 4,
+              pointBackgroundColor: "rgb(0,0,255)",
+              data: xyValues,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+            xAxes: [{ ticks: { min: 40, max: 160 } }],
+            yAxes: [{ ticks: { min: 6, max: 16 } }],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

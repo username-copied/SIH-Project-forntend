@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Fraunces:wght@700;900&display=swap");
+
+* {
+  font-family: "Barlow", sans-serif;
+}
+body {
+  position: relative;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(215, 223, 252) 0%,
+    rgb(255, 255, 255) 0%,
+    rgb(215, 223, 252) 84%
+  );
+}
+
+.header {
+  &_title {
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 2px;
+  }
+  &_foa {
+    position: absolute;
+    top: 140%;
+    left: 14%;
+    font-size: 35px;
+    // padding: 10px;
+  }
+  &_btn {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 400%;
+    left: 78%;
+    &-pdf {
+    }
+    &-SQ {
+    }
+  }
+}
+
+.upload_dropdown {
+  position: absolute;
+  top: 200%;
+  left: 10%;
+  width: 60%;
+  //   height: 600%;
+  border: 2px solid #27157e;
+  border-radius: 30px;
+  animation: slide-in 1s ease-out;
+}
+
+ul {
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 30px;
+  list-style-type: none;
+
+  li {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background 0.2s;
+    a {
+      color: #2375d8;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0;
+      background: #ffa91b;
+      border: 2px solid #f7c833;
+      border-right: 2px solid #f89329;
+      border-bottom: 2px solid #f89329;
+      border-radius: 5px;
+      transition: opacity 0.2s, visibility 0.2s;
+      li {
+        margin: -2px 0 0 -2px;
+        width: calc(100% - 20px);
+        line-height: 1.7;
+        a {
+          color: #2375d8;
+        }
+      }
+    }
+    &:hover {
+      background: #ec4138;
+      border: 2px solid #f05749;
+      border-right: 2px solid #e02a21;
+      border-bottom: 2px solid #e02a21;
+      a {
+        color: #f9f8fd;
+      }
+      ul {
+        visibility: visible;
+        opacity: 1;
+        box-shadow: 0px 3px 5px 2px #ebecf1;
+        li {
+          a {
+            color: #f9f8fd;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: 20px;
+  }
+  70% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+.header_btn-hidden {
+  opacity: 0;
+}
